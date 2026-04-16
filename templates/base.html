@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">Inventory & Warehouse Management</div>
+
+<div class="sidebar">
+<a href="{{ url_for('dashboard') }}">Dashboard</a>
+<a href="{{ url_for('supplier') }}">Supplier</a>
+<a href="{{ url_for('product') }}">Product</a>
+<a href="{{ url_for('warehouse') }}">Warehouse</a>
+<a href="{{ url_for('inventory') }}">Inventory</a>
+<a href="{{ url_for('purchase') }}">Purchase</a>
+<a href="{{ url_for('sales') }}">Sales</a>
+
+<!-- NEW FEATURES -->
+<a href="{{ url_for('top_products') }}">Top Products</a>
+<a href="{{ url_for('sales_history') }}">Sales History</a>
+
+<!-- LOW STOCK (NEW) -->
+<a href="{{ url_for('low_stock') }}" style="color:red; font-weight:bold;">
+    ⚠ Low Stock
+</a>
+</div>
+
+<div class="content">
+{% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

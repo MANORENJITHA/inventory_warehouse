@@ -1,0 +1,101 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-right: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Edit - Green */
+.edit-btn {
+    background-color: #28a745;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+/* Delete - Red */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+</style>
+
+<h2>Product Management</h2>
+
+<div class="card">
+
+<form method="POST">
+
+<input type="text" name="name" placeholder="Product Name" required>
+
+<input type="text" name="category" placeholder="Category" required>
+
+<input type="number" step="0.01" name="price" placeholder="Unit Price (₹)" required>
+
+<input type="number" name="threshold" placeholder="Threshold Limit" required>
+
+<br><br>
+
+<button class="add-btn">Add Product</button>
+
+</form>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Category</th>
+<th>Price</th>
+<th>Threshold Limit</th>
+<th>Actions</th>
+</tr>
+
+{% for p in data %}
+<tr>
+<td>{{ p[0] }}</td>
+<td>{{ p[1] }}</td>
+<td>{{ p[2] }}</td>
+<td>{{ p[3] }}</td>
+<td>{{ p[4] }}</td>
+
+<td>
+    <!-- EDIT -->
+    <a href="{{ url_for('edit_product', id=p[0]) }}" 
+       class="action-btn edit-btn">
+        Edit
+    </a>
+
+    <!-- DELETE -->
+    <a href="{{ url_for('delete_product', id=p[0]) }}" 
+       class="action-btn delete-btn"
+       onclick="return confirm('Are you sure you want to delete this product?')">
+        Delete
+    </a>
+</td>
+
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

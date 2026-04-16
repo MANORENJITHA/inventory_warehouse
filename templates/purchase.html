@@ -1,0 +1,86 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Purchase</h2>
+
+<div class="card">
+<form method="POST">
+
+<select name="product" id="product" required>
+<option value="">Select Product</option>
+{% for p in products %}
+<option value="{{p[0]}}" data-price="{{p[3]}}">
+{{p[1]}} - ₹{{p[3]}}
+</option>
+{% endfor %}
+</select>
+
+<select name="supplier" required>
+<option value="">Select Supplier</option>
+{% for s in suppliers %}
+<option value="{{s[0]}}">{{s[1]}}</option>
+{% endfor %}
+</select>
+
+<select name="warehouse" required>
+<option value="">Select Warehouse</option>
+{% for w in warehouses %}
+<option value="{{w[0]}}">{{w[1]}}</option>
+{% endfor %}
+</select>
+
+<input type="number" name="qty" id="qty" placeholder="Quantity" required>
+
+<input type="text" id="total_cost" placeholder="Total Cost" readonly>
+
+<button class="add-btn">Add Purchase</button>
+
+</form>
+</div>
+
+<br>
+
+<div class="card">
+<table>
+<tr>
+<th>ID</th>
+<th>Product</th>
+<th>Supplier</th>
+<th>Warehouse</th>
+<th>Qty</th>
+<th>Date</th>
+<th>Total Cost</th>
+</tr>
+
+{% for d in data %}
+<tr>
+<td>{{d[0]}}</td>
+<td>{{d[1]}}</td>
+<td>{{d[2]}}</td>
+<td>{{d[3]}}</td>
+<td>{{d[4]}}</td>
+<td>{{d[5]}}</td>
+<td>₹{{d[6]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+<script>
+document.getElementById("qty").addEventListener("input", calculate);
+document.getElementById("product").addEventListener("change", calculate);
+
+function calculate() {
+    let product = document.getElementById("product");
+    let price = product.options[product.selectedIndex]?.dataset.price || 0;
+    let qty = document.getElementById("qty").value || 0;
+
+    document.getElementById("total_cost").value = price * qty;
+}
+</script>
+
+{% endblock %}
+
+

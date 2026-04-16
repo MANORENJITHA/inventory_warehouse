@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Low Stock Products</h2>
+
+<div class="card">
+
+<table>
+<tr>
+<th>Product</th>
+<th>Quantity</th>
+<th>Threshold</th>
+</tr>
+
+{% for d in data %}
+<tr>
+<td>{{d[0]}}</td>
+<td>{{d[1]}}</td>
+<td>{{d[2]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

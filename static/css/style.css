@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #002147, #005792);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    background: white;
+    border-right: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin: 8px;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background-color: #005792;
+    color: white;
+}
+
+/* Content */
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* Dashboard */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+button {
+    padding: 8px 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.add-btn { background: green; }
+.edit-btn { background: orange; }
+.delete-btn { background: red; }
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #005792;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Inputs */
+input, select {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Low stock */
+.low-stock {
+    color: red;
+    font-weight: bold;
+}
+
+/* Forms */
+form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+.add-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.green-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.green-btn:hover {
+    background-color: #218838;
+}
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-right: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Green Edit Button */
+.edit-btn {
+    background-color: #28a745;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+/* Red Delete Button */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}

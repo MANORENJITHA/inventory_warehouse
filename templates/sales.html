@@ -1,0 +1,87 @@
+
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Sales Billing</h2>
+
+<div class="card">
+
+<form method="POST">
+
+<select name="product" required>
+<option value="">Select Product</option>
+{% for p in products %}
+<option value="{{p[0]}}">{{p[1]}}</option>
+{% endfor %}
+</select>
+
+<input type="number" name="qty" placeholder="Quantity" required>
+
+<button name="add" class="add-btn">Add Item</button>
+
+</form>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>Cart</h3>
+
+<table border="1" width="100%" cellpadding="8">
+<tr>
+<th>Product</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+<th>Action</th>
+</tr>
+
+{% for item in cart %}
+<tr>
+<td>{{item.name}}</td>
+<td>{{item.qty}}</td>
+<td>{{item.price}}</td>
+<td>{{item.total}}</td>
+<td>
+    <a href="{{ url_for('delete_cart_item', index=loop.index0) }}"
+       onclick="return confirm('Remove this item?');">
+       Remove
+    </a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<h3>Total: ₹{{total}}</h3>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<form method="POST">
+
+<select name="warehouse" required>
+<option value="">Select Warehouse</option>
+{% for w in warehouses %}
+<option value="{{w[0]}}">{{w[1]}}</option>
+{% endfor %}
+</select>
+
+<button name="bill" class="add-btn">Generate Bill</button>
+
+</form>
+
+{% if message %}
+<p style="color:green; font-weight:bold;">{{message}}</p>
+{% endif %}
+
+</div>
+
+{% endblock %}

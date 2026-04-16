@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Edit Product</h2>
+
+<div class="card">
+<form method="POST">
+
+    <input type="text" name="name"
+           value="{{ product[1] }}" placeholder="Product Name" required>
+
+    <input type="text" name="category"
+           value="{{ product[2] }}" placeholder="Category" required>
+
+    <input type="number" name="price"
+           value="{{ product[3] }}" placeholder="Price" required>
+
+    <input type="number" name="threshold"
+           value="{{ product[4] }}" placeholder="Threshold Limit" required>
+
+    <!-- Supplier field REMOVED -->
+
+    <button class="edit-btn">Update</button>
+
+</form>
+</div>
+
+{% endblock %}
+
+

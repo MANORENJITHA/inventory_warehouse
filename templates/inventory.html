@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Warehouses</h2>
+
+<div class="card">
+
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Action</th>
+</tr>
+
+{% for w in warehouses %}
+<tr>
+<td>{{ w[0] }}</td>
+<td>{{ w[1] }}</td>
+<td>
+    <a href="{{ url_for('inventory_view', id=w[0]) }}">
+        <button class="add-btn">View Stock</button>
+    </a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

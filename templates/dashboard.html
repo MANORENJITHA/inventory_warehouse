@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div class="dashboard-container">
+
+<div class="card">
+<h3>Supplier</h3>
+<p>Manage supplier details</p>
+<a href="/supplier"><button class="add-btn">Open</button></a>
+</div>
+
+<div class="card">
+<h3>Product</h3>
+<p>Manage product details</p>
+<a href="/product"><button class="add-btn">Open</button></a>
+</div>
+
+<div class="card">
+<h3>Warehouse</h3>
+<p>Manage warehouse storage</p>
+<a href="/warehouse"><button class="add-btn">Open</button></a>
+</div>
+
+<div class="card">
+<h3>Inventory</h3>
+<p>Track stock levels</p>
+<a href="/inventory"><button class="add-btn">Open</button></a>
+</div>
+
+<div class="card">
+<h3>Purchase</h3>
+<p>Record purchases</p>
+<a href="/purchase"><button class="add-btn">Open</button></a>
+</div>
+
+<div class="card">
+<h3>Sales</h3>
+<p>Billing system</p>
+<a href="/sales"><button class="add-btn">Open</button></a>
+</div>
+
+<!-- NEW FEATURES -->
+
+<div class="card">
+<h3>Top Products</h3>
+<p>Most sold products</p>
+<a href="/top_products"><button class="add-btn">Open</button></a>
+</div>
+
+<div class="card">
+<h3>Sales History</h3>
+<p>View all sales records</p>
+<a href="/sales_history"><button class="add-btn">Open</button></a>
+</div>
+
+</div>
+
+{% endblock %}
+

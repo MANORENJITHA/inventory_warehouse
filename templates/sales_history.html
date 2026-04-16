@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Sales History</h2>
+
+<div class="card">
+
+<table>
+<tr>
+<th>Sale ID</th>
+<th>Product ID</th>
+<th>Product Name</th>
+<th>Warehouse</th>
+<th>Quantity</th>
+<th>Date</th>
+<th>Total</th>
+</tr>
+
+{% for d in sales %}
+<tr>
+<td>{{ d.sales_id }}</td>
+<td>{{ d.product_id }}</td>
+<td>{{ d.product_name }}</td>
+<td>{{ d.warehouse_name }}</td>
+<td>{{ d.quantity_sold }}</td>
+<td>{{ d.sale_date }}</td>
+<td>{{ d.total_amount }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

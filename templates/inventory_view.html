@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Warehouse Stock</h2>
+
+<table>
+<tr>
+<th>Product</th>
+<th>Quantity</th>
+</tr>
+
+{% for d in data %}
+<tr>
+<td>{{d[0]}}</td>
+
+<td>
+{{d[1]}}
+{% if d[1] <= d[2] %}
+<span style="color:red;">⚠ Low Stock</span>
+{% endif %}
+</td>
+
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

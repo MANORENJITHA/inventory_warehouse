@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Top Selling Products</h2>
+
+<!-- WAREHOUSE BOXES -->
+<div style="display:flex; flex-wrap:wrap; gap:20px; margin-bottom:30px;">
+
+    {% for w in warehouses %}
+    <div style="border:1px solid #ccc; padding:20px; border-radius:10px; width:250px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+
+        <h3>{{ w[1] }}</h3>
+
+        <a href="{{ url_for('top_products', warehouse_id=w[0]) }}">
+            <button style="background-color:#28a745; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer;">
+                View Top Products
+            </button>
+        </a>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+<!-- TOP PRODUCTS TABLE -->
+{% if data %}
+
+<div class="card">
+
+<h3>Top Products</h3>
+
+<table border="1" width="100%" cellpadding="8" style="border-collapse:collapse; text-align:center;">
+<tr style="background-color:#f2f2f2;">
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Quantity Sold</th>
+    <th>Warehouse</th>
+    <th>Supplier Details</th>
+</tr>
+
+{% for d in data %}
+<tr>
+    <td>{{ d[0] }}</td>
+    <td>{{ d[1] }}</td>
+    <td>{{ d[2] }}</td>
+    <td>{{ d[3] }}</td>
+    <td>
+        <a href="{{ url_for('view_supplier', supplier_id=d[5]) }}">
+            <button style="background-color:#007bff; color:white; border:none; padding:6px 10px; border-radius:5px; cursor:pointer;">
+                View Supplier
+            </button>
+        </a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

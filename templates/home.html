@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.home-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.home-container h1 {
+    color: #002147;
+    margin-bottom: 10px;
+}
+
+.home-container p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* IMAGE STYLING */
+.hero-image {
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* BUTTON */
+.enter-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #005792;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.enter-btn:hover {
+    background: #003f5c;
+}
+</style>
+
+<div class="home-container">
+
+    <h1>Inventory & Warehouse Management System</h1>
+
+    <p>Manage products, suppliers, warehouses, sales and inventory efficiently.</p>
+
+    <!-- IMAGE -->
+    <img src="/static/images/inventory.jpeg" 
+         alt="Inventory Image"
+         class="hero-image">
+
+    <!-- BUTTON -->
+    <a href="/dashboard">
+        <button class="enter-btn">Go to Dashboard</button>
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Low Stock - Warehouses</h2>
+
+<div class="card">
+
+<table>
+<tr>
+<th>Warehouse ID</th>
+<th>Warehouse Name</th>
+<th>View</th>
+</tr>
+
+{% for w in warehouses %}
+<tr>
+<td>{{w[0]}}</td>
+<td>{{w[1]}}</td>
+<td>
+    <a href="/low_stock_view/{{w[0]}}" class="action-btn edit-btn">
+        View Low Stock
+    </a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

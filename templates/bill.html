@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>🧾 Invoice Bill</h2>
+
+<div class="card">
+
+<table>
+<tr>
+<th>Product</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+
+{% for item in bill["items"] %}
+<tr>
+<td>{{ item.name }}</td>
+<td>{{ item.qty }}</td>
+<td>{{ item.price }}</td>
+<td>{{ item.total }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+
+<h3>Total Amount: ₹{{ bill["total"] }}</h3>
+
+<br>
+
+<!-- Buttons -->
+<a href="/sales">
+    <button class="add-btn">⬅ Back to Sales</button>
+</a>
+
+<button class="add-btn" onclick="window.print()">🖨️ Print Bill</button>
+
+</div>
+
+{% endblock %}

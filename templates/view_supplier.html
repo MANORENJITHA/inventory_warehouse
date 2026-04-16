@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Top Supplier for this Product</h2>
+
+<div class="card">
+
+<p><strong>Name:</strong> {{ supplier[1] }}</p>
+<p><strong>Contact:</strong> {{ supplier[2] }}</p>
+<p><strong>Address:</strong> {{ supplier[3] }}</p>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Edit Warehouse</h2>
+
+<div class="card">
+<form method="POST">
+
+    <input type="text" name="name"
+           value="{{ warehouse[1] }}" required>
+
+    <input type="text" name="location"
+           value="{{ warehouse[2] }}" required>
+
+    <input type="number" name="capacity"
+           value="{{ warehouse[3] }}" required>
+
+    <button class="edit-btn">Update</button>
+
+</form>
+</div>
+
+{% endblock %}
+
+
+
